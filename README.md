@@ -1,6 +1,36 @@
-![logo](https://github.frapsoft.com/top/open-source-v1.png)  
+![Apache Logo](https://github.frapsoft.com/top/apache.gif)
 
-# ProjectName [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+# htdigest authentication for Apache Webserver [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+
+### Module `mod_auth_digest`
+
+*Tutorial how to create [htdigest](http://httpd.apache.org/docs/current/mod/mod_auth_digest.html) authentication for Apache Webserver.*  
+
+### 1.) create a [.htaccess](https://httpd.apache.org/docs/2.4/howto/htaccess.html) file  
+
+***best practice: only serve secure data over a encrypted connection!***  
+
+```
+<Location "/var/www/website/wp-admin/">
+    AuthType Digest
+   	AuthName "protected"
+    AuthDigestDomain "/wp-admin/" "https://myblog.loc/wp-admin/"
+    AuthDigestProvider file
+    AuthUserFile "/var/secure/.htpasswd"
+    Require valid-user
+</Location>
+```
+
+
+### 2.) create a `.htpasswd` file
+
+`htdigest -c .htpasswd realm username`   
+
+**important notice:** realm must be the same string you choose before for the "AuthName" setting.
+
+***best practice: save the .htpasswd files outside of the public accessible webfolder.***  
+
+
 ### Contact / Social Media
 
 *Get the latest News about Web Development, Open Source, Tooling, Server & Security*
@@ -13,7 +43,7 @@
 
 ### Development by 
 
-Developer: [Maik Ellerbrock](https://github.com/ellerbrock/)  
+Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)  
 Company: [Frapsoft](https://github.com/frapsoft/)
 
 

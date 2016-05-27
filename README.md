@@ -1,6 +1,6 @@
 ![Apache Logo](https://github.frapsoft.com/top/apache.gif)
 
-# htdigest authentication for Apache Webserver [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+# htdigest authentication for Apache Webserver [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v101)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)  
 
 ### Module `mod_auth_digest`
 

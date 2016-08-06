@@ -1,6 +1,6 @@
 ![Apache Logo](https://github.frapsoft.com/top/apache.gif)
 
-# htdigest authentication for Apache Webserver [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)  
+# htdigest authentication for Apache Webserver [![Build Status](https://travis-ci.org/ellerbrock/apache-htdigest-security.svg?branch=master)](https://travis-ci.org/ellerbrock/apache-htdigest-security) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)  
 
 ### Module `mod_auth_digest`
 
@@ -29,7 +29,6 @@
 **important notice:** realm must be the same string you choose before for the "AuthName" setting.
 
 ***best practice: save the .htpasswd files outside of the public accessible webfolder.***  
-
 
 ### Contact / Social Media
 

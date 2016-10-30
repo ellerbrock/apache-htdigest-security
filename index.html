@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>apache htdigest security by ellerbrock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">apache htdigest security</h1>
+      <h2 class="project-tagline">:unlock: Tutorial how to create htdigest authentication for Apache Webserver.</h2>
+      <a href="https://github.com/ellerbrock/apache-htdigest-security" class="btn">View on GitHub</a>
+      <a href="https://github.com/ellerbrock/apache-htdigest-security/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ellerbrock/apache-htdigest-security/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://github.frapsoft.com/top/apache.gif" alt="Apache Logo"></p>
+
+<h1>
+<a id="htdigest-authentication-for-apache-webserver---" class="anchor" href="#htdigest-authentication-for-apache-webserver---" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>htdigest authentication for Apache Webserver <a href="https://travis-ci.org/ellerbrock/apache-htdigest-security"><img src="https://travis-ci.org/ellerbrock/apache-htdigest-security.svg?branch=master" alt="Build Status"></a> <a href="https://github.com/ellerbrock/open-source-badge/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102" alt="Open Source Love"></a> <a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://badges.gitter.im/frapsoft/frapsoft.svg" alt="Gitter Chat"></a>
+</h1>
+
+<h3>
+<a id="module-mod_auth_digest" class="anchor" href="#module-mod_auth_digest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module <code>mod_auth_digest</code>
+</h3>
+
+<p><em>Tutorial how to create <a href="http://httpd.apache.org/docs/current/mod/mod_auth_digest.html">htdigest</a> authentication for Apache Webserver.</em>  </p>
+
+<h3>
+<a id="1-create-a-htaccess-file" class="anchor" href="#1-create-a-htaccess-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.) create a <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html">.htaccess</a> file</h3>
+
+<p><strong><em>best practice: only serve secure data over a encrypted connection!</em></strong>  </p>
+
+<pre><code>&lt;Location "/var/www/website/wp-admin/"&gt;
+    AuthType Digest
+    AuthName "protected"
+    AuthDigestDomain "/wp-admin/" "https://myblog.loc/wp-admin/"
+    AuthDigestProvider file
+    AuthUserFile "/var/secure/.htpasswd"
+    Require valid-user
+&lt;/Location&gt;
+</code></pre>
+
+<h3>
+<a id="2-create-a-htpasswd-file" class="anchor" href="#2-create-a-htpasswd-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.) create a <code>.htpasswd</code> file</h3>
+
+<p><code>htdigest -c .htpasswd realm username</code>   </p>
+
+<p><strong>important notice:</strong> realm must be the same string you choose before for the "AuthName" setting.</p>
+
+<p><strong><em>best practice: save the .htpasswd files outside of the public accessible webfolder.</em></strong>  </p>
+
+<h3>
+<a id="contact--social-media" class="anchor" href="#contact--social-media" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact / Social Media</h3>
+
+<p><em>Get the latest News about Web Development, Open Source, Tooling, Server &amp; Security</em></p>
+
+<p><a href="https://twitter.com/frapsoft/"><img src="https://github.frapsoft.com/social/twitter.png" alt="Twitter"></a>
+<a href="https://www.facebook.com/frapsoft/"><img src="https://github.frapsoft.com/social/facebook.png" alt="Facebook"></a>
+<a href="https://plus.google.com/116540931335841862774"><img src="https://github.frapsoft.com/social/google-plus.png" alt="Google+"></a>
+<a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://github.frapsoft.com/social/gitter.png" alt="Gitter"></a>
+<a href="https://github.com/ellerbrock/"><img src="https://github.frapsoft.com/social/github.png" alt="Github"></a></p>
+
+<h3>
+<a id="development-by" class="anchor" href="#development-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development by</h3>
+
+<p>Developer / Author: <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a><br>
+Company: <a href="https://github.com/frapsoft/">Frapsoft</a></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p><a href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br></p>
+
+<p>This work by <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ellerbrock/apache-htdigest-security">apache htdigest security</a> is maintained by <a href="https://github.com/ellerbrock">ellerbrock</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
